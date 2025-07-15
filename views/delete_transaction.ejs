@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Transaction</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirm Delete</h1>
+        <p>Are you sure you want to delete the transaction titled "<%= transaction.title %>"?</p>
+        <p>Amount: <%= transaction.amount %></p>
+        <form action="/transactions/delete/<%= transaction.id %>" method="POST">
+            <button type="submit" style="background-color: red; color: white;">Yes, Delete</button>
+            <a href="/transactions" style="text-decoration: none; background-color: gray; color: white; padding: 8px 16px; border-radius: 5px;">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Transaction</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .container { max-width: 500px; margin: 0 auto; }
+        form { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        label { font-weight: bold; }
+        input[type="text"], input[type="number"], input[type="date"], select, textarea { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background-color: #007bff; color: white; padding: 10px 15px; border: none; cursor: pointer; border-radius: 5px; }
+        a { text-decoration: none; color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Transaction</h1>
+        <form action="/add" method="POST">
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="type">Type:</label>
+                <select id="type" name="type" required>
+                    <option value="expense">Expense</option>
+                    <option value="income">Income</option>
+                </select>
+            </div>
+            <div>
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category">
+            </div>
+            <div>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" step="0.01" required>
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea>
+            </div>
+            <button type="submit">Add Transaction</button>
+            <p><a href="/">Back to Transactions</a></p>
+        </form>
+    </div>
+</body>
+</html>
